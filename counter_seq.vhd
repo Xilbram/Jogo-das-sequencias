@@ -28,7 +28,7 @@ begin
             count0  <= '0';
             F       <= (others => '0'); -- Inicializa F com '000'
             end_sequence <= '0';
-        elsif (Enable = '1' and rising_edge(Clock)) then
+        elsif (Enable = '1' and rising_edge(Clock)) then --garante que operações desse processo só ocorram no instante da borda de subida do sinal de clock
             if (counter = "11") then
                 counter <= "00";
                 count0  <= '1';
