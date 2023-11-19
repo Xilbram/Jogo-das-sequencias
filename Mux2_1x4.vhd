@@ -1,3 +1,4 @@
+library ieee;
 use ieee.std_logic_1164.all;
 use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
@@ -9,6 +10,9 @@ entity Mux2_1x4 is port (
 end Mux2_1x4;
         
 architecture arqdtp of Mux2_1x4 is
+    begin
+    
      D <=  L0   when s <= '0' else
-		   L1;	                       
+		   L1;	
+		   
 end arqdtp;
