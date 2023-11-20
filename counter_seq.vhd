@@ -26,7 +26,7 @@ begin
         if (Reset = '1') then
             counter <= "00";
             count0  <= '0';
-            F       <= (others => '0'); -- Inicializa F com '000'
+            F       <= ("000"); -- Inicializa F com '000'
             end_sequence <= '0';
         elsif (Enable = '1' and rising_edge(Clock)) then --garante que operações desse processo só ocorram no instante da borda de subida do sinal de clock
             if (counter = "11") then
@@ -48,6 +48,6 @@ begin
     end process;
 
     seq     <= F;
-    ct_out  <= counter; -- Saída recebe o valor do contador sempre
+    ct_out  <= counter; -- Saída recebe contador
 
 end arq_counterseq;
