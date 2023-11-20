@@ -26,7 +26,7 @@ begin
             count <= Load;
         elsif (Enable = '1' and rising_edge(Clock)) then --garante que operações desse processo só ocorram no instante da borda de subida do sinal de clock
             if (count = "00000001") then  -- Contagem zerou
-                count <= (others => '0');
+                count <= (others => '0');  --inicializar todos os elementos do vetor com '0'
                 end_time <= '1';
             else
                 count <= count - "00000001";
