@@ -100,7 +100,7 @@ process(EstadoAtual, enter, end_game, end_sequence, end_round)
                 if (end_round = '1' or end_game = '1') then
                     ProximoEstado <= Result;  -- Se foi verificado que o jogo/partida acabou, vai para Result
                 else
-                    ProximoEstado <= Play; -- Senão, fica no Check --Não faz sentido ficar no Check, não?
+                    ProximoEstado <= selec; -- Senão, fica no Check --Não faz sentido ficar no Check, não?
                 end if;
                 R1 <= '0';
                 E1 <= '0';

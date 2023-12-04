@@ -18,10 +18,12 @@ begin
     begin
 		if (reset = '1') then
 			contador <= "000";
+            end_sequence <= '0';
 		elsif(Clock'event and Clock='1') then
 		     if (Enable='1') then
                 if(contador="011") then
                     end_sequence <= '1';
+
                 else
                     contador <= contador +'1';
                     end_sequence <= '0';

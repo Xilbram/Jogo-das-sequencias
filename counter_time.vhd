@@ -23,18 +23,15 @@ begin
     begin
     
         if (Set = '1') then
-            count <= "01100011";
+        --count <= "00000011";
+        count <= "01100011";
         elsif (Clock'event and Clock='1') then
             if (Enable='1') then
-                if(count="0000000") then
-                    end_time <= '1';
-                else
-                    count <= count - load;
-                    end_time <= '0';
-                end if;
+	        	count <= count + Load;
             end if;
         end if;
     end process;
+	end_time <= '1' when (count < "00000001") else '0';
 
     t_out <= count;
 
