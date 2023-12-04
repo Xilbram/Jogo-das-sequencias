@@ -227,13 +227,13 @@ HEX5 <= "1111111";
 --end_roundDebug <= end_round;
 entradaHex4 <= Y;
 decodHex4: decod port map(entradaHex4,saidaHex4);
-HEX4 <= saidaHex4;
+HEX4<= "1111111";
 
 --HEX3 --debug
 --end_sequenceDebug <= end_sequence;
 entradaHex3 <= '0' & X;
 decodHex3: decod port map(entradaHex3,saidaHex3);
-HEX3 <= saidaHex3;
+HEX3 <= "1111111";
 
 --HEX2
 HEX2 <= "1111111";
@@ -268,7 +268,7 @@ mx3hx0: mux2_1x7 port map(entradaMuxHex0, mux_hx0_1, mux_hx0_2, HEX0);
 
 ---- Reg2b & Penalty
 reg2b0: reg2b port map(sw(1 downto 0), R1, E1, clk, SEL);
-mux4_1x8Penalty: mux4_1x8 port map(SEL, "00000010","00000100","00000110","00001000",penalty); -- -2,-4,-6,-8 como entradas MUX
+mux4_1x8Penalty: mux4_1x8 port map(SEL, "11111110","11111100","11111010","11111000",penalty); -- -2,-4,-6,-8 como entradas MUX
 
 
 -- counter_seq
@@ -314,7 +314,7 @@ ledr(15 downto 0) <= end_round_and_pisca;
 
 ---- Multiplexadores
 mux2_1x8Controle: mux2_1x8 port map(control,penalty,"00000000",mux_control);
-mux2_1x8E5: mux2_1x8 port map(e5, "00000001", mux_control,saidaMuxE5);
+mux2_1x8E5: mux2_1x8 port map(e5, "11111111", mux_control,saidaMuxE5);
 
 mux2_1x16Ledr: mux2_1x16 port map(e6, termo, pisca,end_round_and_pisca);
 
